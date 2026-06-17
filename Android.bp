@@ -113,8 +113,6 @@ genrule {
 // Define the module type for libncurses
 cc_defaults {
     name: "libncurses_defaults",
-    vendor_available: true,
-    host_supported: true,
     srcs: [
         "ncurses/tty/**/*.c",
         "ncurses/base/**/*.c",
@@ -186,10 +184,11 @@ cc_library_shared {
     name: "libncurses",
     vendor_available: true,
     host_supported: true,
+    recovery: false,
     defaults: ["libncurses_defaults"],
 }
 
-cc_library_shared {
+cc_library {
     name: "libncurses_recovery",
     defaults: ["libncurses_defaults"],
     recovery: true,
