@@ -10,6 +10,7 @@ ncurses_cflags = [
     "-DNDEBUG",
     "-Wno-unused-parameter",
     "-Wno-error=implicit-function-declaration",
+    "-Wno-macro-redefined",
 ]
 
 gen_ncurses_sources = [
